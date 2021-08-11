@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewInit, Component, ComponentFactoryResolver, ViewChild, ViewContainerRef} from '@angular/core';
 
 @Component({
   selector: 'app-dropsection',
   templateUrl: './dropsection.component.html',
   styleUrls: ['./dropsection.component.scss']
 })
-export class DropsectionComponent implements OnInit {
+export class DropsectionComponent implements AfterViewInit {
 
-  constructor() { }
+  @ViewChild('container',  {read: ViewContainerRef})
+  container!: ViewContainerRef;
 
-  ngOnInit(): void {
+  constructor(private cfr: ComponentFactoryResolver) {
+
   }
 
+  ngAfterViewInit(): void {
+    const factory = this.cfr.resolveComponentFactory(DropsectionComponent);
+    this.container.createComponent(factory);
+  }
 }

@@ -1,9 +1,4 @@
-import { Component,
-          ViewChild,
-          ViewContainerRef,
-          ElementRef
-} from '@angular/core';
-import { ComponentPortal } from '@angular/cdk/portal';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -12,15 +7,4 @@ import { ComponentPortal } from '@angular/cdk/portal';
 })
 export class AppComponent {
   title = 'angular-application';
-
-  @ViewChild('container',  {read: ViewContainerRef, static: false}) container;
-  sectionContent;
-
-  constructor(private element: ElementRef) {
-
-  }
-
-  ngAfterViewInit(): void {
-    this.sectionContent = new ComponentPortal(this.container);
-  }
 }

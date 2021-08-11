@@ -10,6 +10,11 @@ import { DragsectionComponent } from './dragsection/dragsection.component';
 import { DropsectionComponent } from './dropsection/dropsection.component';
 
 @NgModule({
+  entryComponents: [
+    StylingsectionComponent,
+    DragsectionComponent,
+    DropsectionComponent
+  ],
   declarations: [
     AppComponent,
     StylingsectionComponent,
