@@ -1,7 +1,16 @@
 <div class="drop-section">
   <h4> Drop section</h4>
+
   <ng-container #container>
-    <p>Dropsection in portal work!</p>
+    <div
+      cdkDropList
+      id="dropList"
+      [cdkDropListData]="droppable"
+      [cdkDropListConnectedTo]="['dragList']"
+      (cdkDropListDropped)="drop($event)">
+
+      <div class="example-box" *ngFor="let item of droppable" cdkDrag>{{item}}</div>
+    </div>
   </ng-container>
 </div>
 

@@ -1,4 +1,5 @@
 import {AfterViewInit, Component, ComponentFactoryResolver, ViewChild, ViewContainerRef} from '@angular/core';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
 
 @Component({
   selector: 'app-dropsection',
@@ -6,6 +7,9 @@ import {AfterViewInit, Component, ComponentFactoryResolver, ViewChild, ViewConta
   styleUrls: ['./dropsection.component.scss']
 })
 export class DropsectionComponent implements AfterViewInit {
+
+  droppable:object = [];
+  draggable:object = [];
 
   @ViewChild('container') container!: ViewContainerRef;
 
@@ -17,4 +21,16 @@ export class DropsectionComponent implements AfterViewInit {
     const factory = this.cfr.resolveComponentFactory(DropsectionComponent);
     this.container.createComponent(factory);
   }
+
+  drop(event: CdkDragDrop<string[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex);
+    }
+  }
 }
+

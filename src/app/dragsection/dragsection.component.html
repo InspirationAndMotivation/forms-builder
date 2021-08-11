@@ -1,15 +1,43 @@
 <div class="drag-section">
   <h4> Drag section </h4>
-  <ng-container #container>
-    <div class="draggable-box" appDragging>Drag me around</div>
-    <div class="draggable-box">
-      <button appDragging>This is button.</button>
-    </div>
-    <div class="draggable-box">
-      <input appDragging>
-    </div>
-    <div class="draggable-box">
-      <textarea appDragging>This is textarea.</textarea>
+  <ng-container class="container" #container>
+    <div
+      cdkDropList
+      id="dragList"
+      [cdkDropListData]="draggable"
+      [cdkDropListConnectedTo]="['dropList']"
+      (cdkDropListDropped)="drop($event)">
+
+      <div class="draggable-box" cdkDrag>Drag me around</div>
+
+      <div class="draggable-box" cdkDrag>
+        <button class="box-item" >This is button.</button>
+      </div>
+
+      <div class="draggable-box" cdkDrag>
+        <input type="text"
+               placeholder="This is input field."
+               class="box-item" >
+      </div>
+
+      <div class="draggable-box" cdkDrag>
+        <textarea class="box-item">This is textarea.</textarea>
+      </div>
+
+      <div class="draggable-box" cdkDrag>
+        <input type="checkbox" id="option-checkbox" name="draggable-checkbox" checked>
+        <label for="option-checkbox">Check me, please.</label>
+      </div>
+
+      <div class="draggable-box" id="select-block" cdkDrag>
+        <label for="option-select">Choose an option:</label><br><br>
+        <select name="options" id="option-select">
+          <option value="">  This is label with options.  </option>
+          <option value="option1">Pick this option.</option>
+          <option value="option2">Pick me.</option>
+          <option value="option3">I am better option.</option>
+        </select>
+      </div>
     </div>
   </ng-container>
 </div>

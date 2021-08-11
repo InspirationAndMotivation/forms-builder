@@ -6,24 +6,49 @@
     text-shadow: #444444 1px 0 10px;
   }
 
+  #container {
+    //display:inline-block;
+  }
+
+  #select-block {
+    display: inline-block;
+
+    label,
+    select {
+      display: block;
+    }
+  }
+
   .draggable-box {
-    width: 170px;
-    height: 70px;
+    width: 45%;
+    height: 10vh;
     border: solid 1px #ccc;
     color: rgba(0, 0, 0, 0.87);
+    background: #fff;
+    border-radius: 4px;
+    font-size: 70%;
+
     cursor: move;
+
+    margin: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    background: #fff;
-    border-radius: 4px;
     position: relative;
+
     z-index: 1;
     transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
     box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
     0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-    margin: 5px;
+
+    .box-item {
+      text-align: center;
+      width: 85%;
+      height: 55%;
+
+      font-size: 90%;
+      font-family: 'Montserrat', cursive;
+    }
   }
 
   .draggable-box.dragging {
