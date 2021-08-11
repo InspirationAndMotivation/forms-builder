@@ -1,4 +1,5 @@
 <cdk-accordion class="style-accordion">
+  <h4>Styling</h4>
   <cdk-accordion-item
     *ngFor="let item of items; let index = index;"
     #accordionItem="cdkAccordionItem"
@@ -17,10 +18,7 @@
       role="region"
       [style.display]="accordionItem.expanded ? '' : 'none'"
       [attr.id]="'accordion-body-' + index"
-      [attr.aria-labelledby]="'accordion-header-' + index">
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Perferendis
-      excepturi incidunt ipsum deleniti labore, tempore non nam doloribus blanditiis
-      veritatis illo autem iure aliquid ullam rem tenetur deserunt velit culpa?
+      [attr.aria-labelledby]="'accordion-header-' + index">Style differences
     </div>
   </cdk-accordion-item>
 </cdk-accordion>
