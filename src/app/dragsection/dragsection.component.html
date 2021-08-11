@@ -1,10 +1,16 @@
 <div class="drag-section">
   <h4> Drag section </h4>
   <ng-container #container>
-    <input>This is input.
-    <textarea>This is textarea.</textarea>
-    <button>This is button.</button>
+    <div class="draggable-box" appDragging>Drag me around</div>
+    <div class="draggable-box">
+      <button appDragging>This is button.</button>
+    </div>
+    <div class="draggable-box">
+      <input appDragging>
+    </div>
+    <div class="draggable-box">
+      <textarea appDragging>This is textarea.</textarea>
+    </div>
   </ng-container>
-  <ng-container>Yes</ng-container>
 </div>
 
