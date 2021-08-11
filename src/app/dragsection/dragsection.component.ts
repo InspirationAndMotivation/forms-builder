@@ -12,8 +12,7 @@ import {
 })
 export class DragsectionComponent implements AfterViewInit {
 
-  @ViewChild('container',  {read: ViewContainerRef})
-  container!: ViewContainerRef;
+  @ViewChild('container') container!: ViewContainerRef;
 
   constructor(private cfr: ComponentFactoryResolver) {
 

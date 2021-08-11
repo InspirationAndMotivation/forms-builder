@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { StylingsectionComponent } from './stylingsection/stylingsection.component';
 import { DragsectionComponent } from './dragsection/dragsection.component';
 import { DropsectionComponent } from './dropsection/dropsection.component';
+import {CdkAccordionModule} from "@angular/cdk/accordion";
 
 @NgModule({
   entryComponents: [
@@ -21,12 +22,13 @@ import { DropsectionComponent } from './dropsection/dropsection.component';
     DragsectionComponent,
     DropsectionComponent
   ],
-  imports: [
-    BrowserModule,
-    PortalModule,
-    FormsModule,
-    DragDropModule
-  ],
+    imports: [
+        BrowserModule,
+        PortalModule,
+        FormsModule,
+        DragDropModule,
+        CdkAccordionModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

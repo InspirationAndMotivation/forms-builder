@@ -6,8 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./stylingsection.component.scss']
 })
 export class StylingsectionComponent implements OnInit {
-  acc = document.getElementsByClassName('accordion');
-
+  items = ['General Styling', 'Field Styling'];
+  expandedIndex = 0;
   constructor() { }
 
   ngOnInit(): void {

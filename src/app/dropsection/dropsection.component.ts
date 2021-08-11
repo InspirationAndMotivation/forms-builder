@@ -7,8 +7,7 @@ import {AfterViewInit, Component, ComponentFactoryResolver, ViewChild, ViewConta
 })
 export class DropsectionComponent implements AfterViewInit {
 
-  @ViewChild('container',  {read: ViewContainerRef})
-  container!: ViewContainerRef;
+  @ViewChild('container') container!: ViewContainerRef;
 
   constructor(private cfr: ComponentFactoryResolver) {
 
