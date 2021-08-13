@@ -9,6 +9,7 @@ import { StylingsectionComponent } from './stylingsection/stylingsection.compone
 import { DragsectionComponent } from './dragsection/dragsection.component';
 import { DropsectionComponent } from './dropsection/dropsection.component';
 import {CdkAccordionModule} from "@angular/cdk/accordion";
+import { FormStylingDirective } from './directives/form-styling.directive';
 
 @NgModule({
   entryComponents: [
@@ -20,7 +21,8 @@ import {CdkAccordionModule} from "@angular/cdk/accordion";
     AppComponent,
     StylingsectionComponent,
     DragsectionComponent,
-    DropsectionComponent
+    DropsectionComponent,
+    FormStylingDirective
   ],
     imports: [
         BrowserModule,
