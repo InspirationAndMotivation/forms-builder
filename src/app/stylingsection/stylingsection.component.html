@@ -19,6 +19,7 @@
       [style.display]="accordionItem.expanded ? '' : 'none'"
       [attr.id]="'accordion-body-' + index"
       [attr.aria-labelledby]="'accordion-header-' + index">
+
       <div class="accordion-item-body-info">
         <input type="number"
                value=''
@@ -28,7 +29,10 @@
                ng-pattern="integerval"
                required>
         <pre> {{ fontSize }} </pre>
-        <input type="text" ng-model="fontColor" placeholder="Enter a color name:" appFormStyling>
+
+        <input type="text" ng-model="fontColor" placeholder="Enter a color name:" #fontColor>
+        <p> Font color is {{ fontColor.value ? fontColor.value : 'Default' }} </p>
+        <button type="button" (click)="setFontColor(fontColor.value)">Set Font Color</button>
       </div>
     </div>
   </cdk-accordion-item>

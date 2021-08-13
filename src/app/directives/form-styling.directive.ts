@@ -1,4 +1,5 @@
 import {Directive, ElementRef, HostBinding, HostListener, Input, Renderer2} from '@angular/core';
+import {DatatransferService} from "../services/datatransfer.service";
 
 @Directive({
   selector: '[appFormStyling]'
@@ -11,11 +12,17 @@ export class FormStylingDirective {
   @HostBinding('style.color') fontColor = '';
   @HostBinding('style.font-size') fontSize = '';
 
-  constructor(private elemRef: ElementRef, private renderer: Renderer2) {
+  choosenFontColor = this.datatransferService.getData();
+
+  constructor(private elemRef: ElementRef,
+              private renderer: Renderer2,
+              private datatransferService:DatatransferService) {
 
   }
 
   @HostListener('click', ['$event.target']) onClick(event: Event) {
+
+    this.renderer.setStyle(this.elemRef.nativeElement, 'color', this.choosenFontColor);
     /*
         this.renderer.setStyle(this.elemRef.nativeElement,
           'background-color',
@@ -38,7 +45,7 @@ export class FormStylingDirective {
           this.color);
     */
     this.fontSize = this.dFontSize;
-    this.fontColor = this.dFontColor;
+    //this.fontColor = this.dFontColor;
     this.renderer.setStyle(this.elemRef.nativeElement, 'border', this.dBorderStyle.border);
     this.renderer.setStyle(this.elemRef.nativeElement, 'borderRadius', this.dBorderStyle.borderRadius);
     this.renderer.setStyle(this.elemRef.nativeElement, 'background-color', this.dBorderStyle["background-color"]);

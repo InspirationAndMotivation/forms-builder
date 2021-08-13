@@ -1,7 +1,6 @@
 import {AfterViewInit, Component, ComponentFactoryResolver, ViewChild, ViewContainerRef} from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
 import {ShareService} from "../services/share.service";
-import {DragsectionComponent} from "../dragsection/dragsection.component";
 
 @Component({
   selector: 'app-dropsection',
@@ -16,7 +15,8 @@ export class DropsectionComponent implements AfterViewInit {
 
   @ViewChild('container') container!: ViewContainerRef;
 
-  constructor(private cfr: ComponentFactoryResolver, private ss:ShareService) {
+  constructor(private cfr: ComponentFactoryResolver,
+              private ss:ShareService) {
 
   }
 
