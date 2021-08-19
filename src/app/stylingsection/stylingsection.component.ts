@@ -11,15 +11,12 @@ export class StylingsectionComponent implements OnInit {
   expandedIndex = 0;
   fontSize!: number;
 
-  constructor(
-    private datatransferService:DatatransferService
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
 
   setFontColor(fontColor:string) {
-    this.datatransferService.setData(fontColor);
     console.log('Data send!');
   }
 

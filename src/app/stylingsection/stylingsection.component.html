@@ -30,7 +30,7 @@
                required>
         <pre> {{ fontSize }} </pre>
 
-        <input type="text" ng-model="fontColor" placeholder="Enter a color name:" #fontColor>
+        <input type="text" ng-model="fontColor" placeholder="Enter a color name:" #fontColor appFormStyling>
         <p> Font color is {{ fontColor.value ? fontColor.value : 'Default' }} </p>
         <button type="button" (click)="setFontColor(fontColor.value)">Set Font Color</button>
       </div>
