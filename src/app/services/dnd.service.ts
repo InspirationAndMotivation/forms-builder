@@ -8,18 +8,18 @@ export class DnDService {
   constructor() {}
 
   getComponents() {
-    let components = JSON.parse(window.localStorage.getItem('components'));
+    let components = JSON.parse(<string>window.localStorage.getItem('components'));
     if (components === null) {
       components = [];
     }
     return components;
   }
 
-  updateComponents(toggleTask, componentsList) {
+  updateComponents(toggleTask: DnD, componentsList: any[]) {
     const componentToToggle = toggleTask;
-    const components = JSON.parse(window.localStorage.getItem('components'));
-    const saved = components.filter(item => {
-      componentsList.filter(component => {
+    const components = JSON.parse(<string>window.localStorage.getItem('components'));
+    const saved = components.filter((item: { id: any; done: any; order: any; description: any; }) => {
+      componentsList.filter((component: { id: any; order: any; description: any; }) => {
         if (item.id === component.id) {
           if (item.id === componentToToggle.id) {
             item.done = componentToToggle.done;

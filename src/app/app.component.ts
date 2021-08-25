@@ -10,7 +10,7 @@ import {SET_MENU_STATE} from "./reducers/menu-reducer";
 
 export class AppComponent {
   title = 'angular-application';
-  menuOpen: boolean;
+  menuOpen?: boolean;
 
   constructor(private store: Store<any>) {
     store.pipe(select('menuState')).subscribe(menuOpen => {
