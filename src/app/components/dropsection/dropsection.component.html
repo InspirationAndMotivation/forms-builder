@@ -1,0 +1,19 @@
+<div class="drop-section" dFontSize="15px"
+                          dFontColor="red"
+                          [dBorderStyle] = "{border: '3px dash blue', borderRadius: '15px', 'background-color': 'black'}"
+                          appFormStyling>
+
+  <ng-container #container appFormStyling>
+    <h4> Drop section</h4>
+
+    <div cdkDropList
+         class="drop-list"
+         [cdkDropListData]="dropList"
+         (cdkDropListDropped)="onDrop($event)">
+      <div class="draggable-box" cdkDrag>Drag me around</div>
+    </div>
+
+    <p>This is drop section!</p>
+  </ng-container>
+</div>
+

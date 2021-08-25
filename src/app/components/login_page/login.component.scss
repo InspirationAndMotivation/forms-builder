@@ -1,0 +1,41 @@
+.wrapper {
+  font-family: 'Montserrat', sans-serif;
+
+  h1 {
+    text-align: center;
+    font-family: 'Unica One', cursive;
+    color: #ffffff;
+    font-size: 4vw;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container {
+      vertical-align: center;
+      padding: 20px;
+      border: rgba(255, 255, 255, 0.25) 2px solid;
+      background-color: rgba(255, 255, 255, 0.45);
+      color: white;
+      font-size: 1.25vw;
+
+      label {
+        padding-bottom: 10%;
+        font-size: 2.0vw;
+      }
+
+      input {
+        width: 70%;
+      }
+
+      button {
+        position: absolute;
+        margin: auto;
+      }
+    }
+  }
+}
+
+
