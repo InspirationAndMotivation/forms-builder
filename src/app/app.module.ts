@@ -13,8 +13,8 @@ import {RegisterComponent} from "./components/register_page";
 
 
 // NGRX Imports
-import { reducers } from './reducers';
-import { DnDEffect } from './effects/DnDEffect';
+import { reducers } from './store';
+import { DnDEffect } from './store/DnDEffect';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -29,7 +29,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 // Other Imports
 import {DragDrop, DragDropModule} from "@angular/cdk/drag-drop";
-import { FilterByNamePipe } from './pipes/filter-by-name.pipe';
+// import { FilterByNamePipe } from './pipes/filter-by-name.pipe';
 import { environment } from '../environments/environment';
 import {CdkAccordionModule} from "@angular/cdk/accordion";
 import { FormStylingDirective } from './directives/form-styling.directive';

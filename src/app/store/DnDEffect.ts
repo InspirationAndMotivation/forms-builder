@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { getComponents, updateComponents } from '../actions/DragAndDropActions';
+import { getComponents, updateComponents } from './DnDAction';
 import { switchMap, mergeMap, catchError } from 'rxjs/operators';
 import { of } from 'rxjs';
 import { DnDService } from '../services/dnd.service';

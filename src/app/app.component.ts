@@ -1,6 +1,6 @@
 import {Component, HostListener} from '@angular/core';
 import {select, Store} from "@ngrx/store";
-import {SET_MENU_STATE} from "./reducers/menu-reducer";
+import {SET_MENU_STATE} from "./store/menu-reducer";
 
 @Component({
   selector: 'app-root',
