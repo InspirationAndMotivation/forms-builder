@@ -1,6 +1,5 @@
 import {Component, HostListener} from '@angular/core';
 import {select, Store} from "@ngrx/store";
-import {SET_MENU_STATE} from "./store/menu-reducer";
 
 @Component({
   selector: 'app-root',
@@ -21,12 +20,12 @@ export class AppComponent {
   @HostListener('document:click', ['$event'])
 
   public onClick(event: any) {
-    const isOutside = !event.target.className.includes('menu-button') &&
+/*    const isOutside = !event.target.className.includes('menu-button') &&
       !event.target.className.includes('material-icons') &&
       !event.target.className.includes('mat-drawer-inner-container')
     if (isOutside) {
       this.menuOpen = false;
       this.store.dispatch({ type: SET_MENU_STATE, payload: this.menuOpen });
-    }
+    }*/
   }
 }

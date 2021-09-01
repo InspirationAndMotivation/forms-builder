@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+/*import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { getComponents, updateComponents } from './DnDAction';
 import { switchMap, mergeMap, catchError } from 'rxjs/operators';
@@ -37,3 +37,4 @@ export class DnDEffect {
   );
 
 }
+*/

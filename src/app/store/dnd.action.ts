@@ -1,5 +1,5 @@
 import {Action} from '@ngrx/store';
-import {Properties} from '../interfaces';
+import {Properties} from '../models';
 
 export enum actionsTypes {
   addComponent = '[COMPONENT] add component',

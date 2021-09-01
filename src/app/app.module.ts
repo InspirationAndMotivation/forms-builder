@@ -14,7 +14,7 @@ import {RegisterComponent} from "./components/register_page";
 
 // NGRX Imports
 import { reducers } from './store';
-import { DnDEffect } from './store/DnDEffect';
+//import { DnDEffect } from './store/DnDEffect';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
@@ -59,7 +59,7 @@ import {HttpClientModule} from "@angular/common/http";
         CdkAccordionModule,
         appRoutingModule,
         StoreModule.forRoot(reducers),
-        EffectsModule.forRoot([DnDEffect]),
+//        EffectsModule.forRoot([DnDEffect]),
         StoreDevtoolsModule.instrument({
           maxAge: 25,
           logOnly: environment.production

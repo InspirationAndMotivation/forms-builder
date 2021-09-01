@@ -3,13 +3,12 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
-import { AuthService } from './auth.service';
+import { AuthService } from '../services/auth-services/auth.service';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
     constructor(
-        private auth: AuthService,
-        private router: Router
+        private auth: AuthService
     ) { }
     intercept(
         req: HttpRequest<any>,
@@ -32,7 +31,7 @@ export class AuthInterceptor implements HttpInterceptor {
                     if (error.status === 401) {
                         console.log('Error! 401 Unauthorized');
                         this.auth.logout();
-                        this.router.navigate(['/login']);
+                        location.reload(true);
                     }
                     return throwError(error);
                 })

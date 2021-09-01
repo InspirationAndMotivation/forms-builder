@@ -1,5 +1,5 @@
-import { DnDReducer } from './DnDReducer';
+import { DndReducer } from './dnd.reducer';
 
 export const reducers:any = {
-  DnD: DnDReducer
+  DnD: DndReducer
 };
