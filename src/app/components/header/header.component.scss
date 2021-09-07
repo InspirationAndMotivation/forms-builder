@@ -1,0 +1,23 @@
+@import '../../../assets/scss/variables';
+.head {
+  background-color: rgba(255, 255, 255, 0.85);
+  height: 30px;
+
+  li a {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: #444444 1px 0 10px;
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    padding: 15px;
+  }
+
+  .navbar {
+    display: flex;
+    list-style: none;
+  }
+  .nav * {
+    padding: 5px;
+  }
+}

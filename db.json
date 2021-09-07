@@ -1,0 +1,27 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "login": "admin",
+      "password": "admin123",
+      "agree": true
+    },
+    {
+      "id": 2,
+      "login": "oleg_winnie@x.x",
+      "password": "oleg1987",
+      "agree": false
+    },
+    {
+      "id": 3,
+      "login": "test_user@mail.ru",
+      "password": "1234567",
+      "agree": true
+    },
+    {
+      "id": 4,
+      "login": "test@test.com",
+      "password": "1234"
+    }
+  ]
+}

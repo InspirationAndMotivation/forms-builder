@@ -1,38 +1,51 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { PortalModule } from '@angular/cdk/portal';
-import { FormsModule } from '@angular/forms';
-import {DragDrop, DragDropModule} from "@angular/cdk/drag-drop";
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatButtonModule } from '@angular/material/button';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { StylingsectionComponent } from './stylingsection/stylingsection.component';
-import { DragsectionComponent } from './dragsection/dragsection.component';
-import { DropsectionComponent } from './dropsection/dropsection.component';
-import {CdkAccordionModule} from "@angular/cdk/accordion";
-import { FormStylingDirective } from './directives/form-styling.directive';
+import { HeaderComponent } from './components/header/header.component';
+import { FilterPipe} from './pipes/filter-pipe';
+import { reducers } from './store';
+import { environment } from '../environments/environment';
+import { AuthEffects } from './store/effects/auth.effects';
+import { EffectsSteleFields } from './store/effects/components-style.effects';
+import { SharedModules } from './shared/shared.modules';
+import { StylePanelComponent } from './components/style-panel/style-panel.component';
+import { AuthModule } from './components/pages/auth/auth.module';
+import { RegisterModule } from './components/pages/register/register.module';
 
 @NgModule({
-  entryComponents: [
-    StylingsectionComponent,
-    DragsectionComponent,
-    DropsectionComponent
-  ],
   declarations: [
     AppComponent,
-    StylingsectionComponent,
-    DragsectionComponent,
-    DropsectionComponent,
-    FormStylingDirective
+    HeaderComponent,
+    FilterPipe,
+    StylePanelComponent,
   ],
-    imports: [
-        BrowserModule,
-        PortalModule,
-        FormsModule,
-        DragDropModule,
-        CdkAccordionModule
-    ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+  imports: [
+    StoreModule.forRoot(reducers),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
+    }),
+    EffectsModule.forRoot([AuthEffects, EffectsSteleFields]),
+    AppRoutingModule,
+    NoopAnimationsModule,
+    MatSliderModule,
+    MatButtonModule,
+    MatExpansionModule,
+    SharedModules,
+    AuthModule,
+    RegisterModule
 
-export class AppModule { }
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+})
+export class AppModule {}

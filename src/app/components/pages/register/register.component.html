@@ -1,0 +1,15 @@
+<div class="wrapper">
+  <h1 class="title">Register Page</h1>
+  <div class="content">
+    <form [formGroup]="formRegister" (ngSubmit)="handleSubmit()">
+      <div class="container">
+        <input placeholder="email" formControlName="email" /><br />
+        <input placeholder="password" formControlName="password" /><br />
+        <label><input type="checkbox" formControlName="agree" /> I`m agree with Dataprocessing Rules</label><br />
+        <button type="submit">Register</button>
+        <hr>
+        <div class="error" *ngIf="isInvalid">Invalid data</div>
+      </div>
+    </form>
+  </div>
+</div>
