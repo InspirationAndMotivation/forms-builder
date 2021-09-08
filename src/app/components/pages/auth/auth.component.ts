@@ -14,8 +14,10 @@ import { User } from '../../../interfaces';
   templateUrl: './auth.component.html',
   styleUrls: ['./auth.component.scss']
 })
-export class AuthPageComponent implements OnInit, OnDestroy {
+export class AuthComponent implements OnInit, OnDestroy {
   form: FormGroup;
+  email: string;
+  password: string;
   user$: Observable<User>;
   public ngUnsubscribe$ = new Subject<void>();
 
