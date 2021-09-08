@@ -26,7 +26,6 @@ export class SelectComponent implements ControlValueAccessor {
     ],
   };
 
-  //===========ControlValueAccessor==============================
   _value: any = this.actualValue.placeholder;
 
   @Input()

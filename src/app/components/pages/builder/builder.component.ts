@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, OnDestroy, ViewChild, ViewContainerRef } from '@angular/core';
+import {Component, ElementRef, OnInit, OnDestroy, ViewChild, ViewContainerRef, AfterViewInit} from '@angular/core';
 import { CdkPortalOutlet, ComponentPortal, DomPortal, TemplatePortal } from '@angular/cdk/portal';
 import { CdkDragDrop, copyArrayItem, moveItemInArray } from '@angular/cdk/drag-drop';
 import { FormControl, FormGroup } from '@angular/forms';
@@ -22,7 +22,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './builder.component.html',
   styleUrls: ['./builder.component.scss'],
 })
-export class CdkPortalComponent implements OnInit, OnDestroy {
+export class CdkPortalComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(private store: Store, private styleServices: StylesService) { }
 
@@ -60,15 +60,15 @@ export class CdkPortalComponent implements OnInit, OnDestroy {
     this.gottenValuesFromForm = this.form.value;
   }
 
-  getActualStyle(item) {
+  getActualStyle(item): any {
     return this.currentControlItem.find((el) => el[0] === item)[1];
   }
 
-  getActualValue(item) {
+  getActualValue(item): any {
     return this.currentControlItem.find((el) => el[0] === item)[2];
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
 
     this.subStyle = this.store.select(getStyle).subscribe((styles) => {
       this.currentControlItem = styles;
@@ -85,7 +85,7 @@ export class CdkPortalComponent implements OnInit, OnDestroy {
     this.styleServices.removedControl.subscribe(control => this.form.removeControl(control));
   }
 
-  ngAfterViewInit() {
+  ngAfterViewInit(): void {
     this.componentPortal = new ComponentPortal(StylePanelComponent);
     this.StylePanelPortalOutlet.attach(this.componentPortal); // ERROR Error: NG0100 in console
 
@@ -189,7 +189,7 @@ export class CdkPortalComponent implements OnInit, OnDestroy {
 
    }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.subStyle.unsubscribe();
     this.subStyleGeneral.unsubscribe();
   }

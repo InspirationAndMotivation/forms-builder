@@ -22,7 +22,6 @@ export class TextareaComponent implements ControlValueAccessor {
   @Input() stylesSheetTextarea = stylesSheetTextarea;
   @Input() actualValue = { ...valueDefault };
 
-  //===========ControlValueAccessor==============================
   _value: string = '';
 
   @Input()

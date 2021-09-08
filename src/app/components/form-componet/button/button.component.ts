@@ -15,15 +15,15 @@ import { stylesSheetBtn } from '../../../shared/style.sheets';
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
 })
-export class ButtonComponet implements OnInit {
+export class ButtonComponent implements OnInit {
   @ViewChild('btn') btnRef: ElementRef<HTMLButtonElement>;
   @Input() isDrop: boolean;
   @Output() stylesSheetBtnCH = new EventEmitter();
   @Input() stylesSheetBtn = stylesSheetBtn;
-  @Input() getValueForm: Function;
+  @Input() getValueForm;
 
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.stylesSheetBtnCH.emit(this.stylesSheetBtn);
   }
 

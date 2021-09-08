@@ -1,11 +1,10 @@
 <div class="wrapper">
   <h1 class="title">Login Page</h1>
   <div class="content">
-    <h3 *ngIf="iRegister$ | async">Register successful! Now authorise</h3>
     <div class="container">
       <form [formGroup]="form" (ngSubmit)="handleSubmitForm()">
         <input placeholder="email" formControlName="email" /><br />
-        <input placeholder="password" formControlName="password" /><br />
+        <input placeholder="password" formControlName="password" type="password" /><br />
         <button type="submit">LogIn</button>
       </form>
       <hr />

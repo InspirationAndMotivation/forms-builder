@@ -3,7 +3,7 @@ import { SharedModules } from '../../../shared/shared.modules';
 import { PortalModule } from '@angular/cdk/portal';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { CheckboxComponent } from '../../form-componet/checkbox/checkbox.component';
-import { ButtonComponet } from '../../form-componet/button/button.component';
+import { ButtonComponent } from '../../form-componet/button/button.component';
 import { InputComponent } from '../../form-componet/input/input.component';
 import { TextareaComponent } from '../../form-componet/textarea/textarea.component';
 import { SelectComponent } from '../../form-componet/select/select.component';
@@ -20,7 +20,7 @@ const routes: Routes = [{
   declarations: [
     CdkPortalComponent,
     CheckboxComponent,
-    ButtonComponet,
+    ButtonComponent,
     InputComponent,
     TextareaComponent,
     SelectComponent],

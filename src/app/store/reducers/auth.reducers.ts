@@ -4,11 +4,13 @@ import { Actions, AuthActionTypes } from '../actions/auth.actions';
 export interface State {
   user: User;
   error: Error;
+  isRegistered: boolean;
 }
 
 const INIT_STATE: State = {
   user: null,
   error: null,
+  isRegistered: false,
 };
 
 export function reducer(state: State = INIT_STATE, action: Actions): State {
@@ -35,12 +37,12 @@ const INIT_STATE_REGISTER = {
   error: null,
 };
 
-export function reducerRegister(state = INIT_STATE_REGISTER, action: Actions) {
+export function reducerRegister(state = INIT_STATE_REGISTER, action: Actions): any {
   switch (action.type) {
     case AuthActionTypes.RegisterSuccess:
-      return { ...state, register: action.payload };
+      return { ...state, isRegistered: true, register: action.payload };
     case AuthActionTypes.RegisterFailed:
-      return { ...state, register: false };
+      return { ...state, isRegistered: false, register: false };
     default:
       return state;
   }

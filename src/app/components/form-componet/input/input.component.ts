@@ -18,8 +18,6 @@ export class InputComponent implements ControlValueAccessor {
   @Input() stylesSheetInput = stylesSheetInput;
   @Input() actualValue = { ...valueDefault };
 
-  //===========ControlValueAccessor==============================
-
   _value: any = '';
 
   @Input()

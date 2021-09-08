@@ -4,12 +4,14 @@
     <form [formGroup]="formRegister" (ngSubmit)="handleSubmit()">
       <div class="container">
         <input placeholder="email" formControlName="email" /><br />
-        <input placeholder="password" formControlName="password" /><br />
+        <input placeholder="password" formControlName="password" type="password"/><br />
         <label><input type="checkbox" formControlName="agree" /> I`m agree with Dataprocessing Rules</label><br />
         <button type="submit">Register</button>
         <hr>
         <div class="error" *ngIf="isInvalid">Invalid data</div>
+        <div class="result" *ngIf="iRegister$ | async">Registered successful!</div>
       </div>
     </form>
   </div>
 </div>
+

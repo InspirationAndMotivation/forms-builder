@@ -16,19 +16,15 @@ import { User } from '../../../interfaces';
 })
 export class AuthPageComponent implements OnInit, OnDestroy {
   form: FormGroup;
-  iRegister$: Observable<boolean>;
   user$: Observable<User>;
   public ngUnsubscribe$ = new Subject<void>();
 
   constructor(
     private store: Store<State>,
-    private router: Router,
-    private activatedRoute: ActivatedRoute
+    private router: Router
   ) {}
 
   ngOnInit(): void {
-
-    this.iRegister$ = this.activatedRoute.queryParams.pipe(map(params => !!params.reg));
 
     this.form = new FormGroup({
       email: new FormControl(''),

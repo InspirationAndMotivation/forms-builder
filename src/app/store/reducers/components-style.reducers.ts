@@ -37,7 +37,7 @@ export const reduserStyle = (
 
     case ActionStyleField.RemoveStyle:
 
-      let withoutFieldState = [...state].filter(
+      const withoutFieldState = [...state].filter(
         (el) => el[0] !== action.payload
       );
       console.log('state--', withoutFieldState);

@@ -20,7 +20,6 @@ export class CheckboxComponent implements ControlValueAccessor {
   @Input() stylesSheetCheckbox = stylesSheetCheckbox;
   @Input() actualValue = { ...valueDefault };
 
-  //===========ControlValueAccessor==============================
   _value: any = '';
 
   @Input()
